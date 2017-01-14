@@ -1,4 +1,4 @@
-def reverseString(self, s):
+def reverseString(s):
     """
     :type s: str
     :rtype: str
