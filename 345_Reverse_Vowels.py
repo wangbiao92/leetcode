@@ -1,4 +1,4 @@
-def reverseVowels(self, s):
+def reverseVowels(s):
     """
     :type s: str
     :rtype: str
