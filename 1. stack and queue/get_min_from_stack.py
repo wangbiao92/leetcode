@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+# 需要两个栈， 一个放所有元素，一个放最小的元素
 class Solution:
     #
     def __init__(self):

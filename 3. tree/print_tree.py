@@ -26,3 +26,29 @@ class Solution:
                 if tmp.right:
                     row_node.append(tmp.right)
         return res
+
+def max_score(nums):
+    nums = [1] + nums + [1]
+    n = len(nums)
+    dp = [[0] * n for k in range(n)]
+    for gap in range(2, n):
+        for i in range(n - gap):
+            j = i + gap
+            for k in range(i + 1, j):
+                dp[i][j] = max(dp[i][j], nums[i] * nums[k] * nums[j] + dp[i][k] + dp[k][j])
+    return dp[0][n - 1]
+def solution(nums):
+    if nums is None or len(nums) == 0:
+        return 0
+    if 0 not in nums:
+        return max_score(nums)
+    else:
+        sum = 0
+        arr =[]
+        for i in nums:
+            if i !=0:
+                arr.append(i)
+            else:
+                sum += max_score(arr)
+                arr=[]
+        return sum

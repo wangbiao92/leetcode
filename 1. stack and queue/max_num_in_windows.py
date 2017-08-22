@@ -26,7 +26,7 @@ class Solution:
         result = []
         index_arr = []
         for i in range(0, len(num)):
-            while index_arr != [] and num[i] >= num[index_arr[-1]]:
+            while index_arr and num[i] >= num[index_arr[-1]]:
                 index_arr.pop()
             index_arr.append(i)
             if index_arr[0] == i - size:
